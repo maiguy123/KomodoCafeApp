@@ -1,23 +1,25 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 
 namespace GoldBadgeChallenge
 {
   public class  Menu
     {
-        public Menu () {  }
-        public Menu(string NameOfMeal, string Description, string Ingredients, string Price)
-        {
-            NameOfMeal = nameofmeal;
-            Description = descripition;
-            Ingredients = ingredients;
-            Price = price;
-        }
-         public string nameofmeal { get; set; } 
-         public string descripition { get; set; } 
-         public string ingredients { get; set; } 
-         public string price { get; set; } 
+         public string Name { get; set; } 
+         public string Descripition { get; set; } 
+         public string Price { get; set; }
+        public List<string> Ingredients { get; set; }
 
+        public Menu () {  }
+        public Menu(string nameOfMeal, string description, List<string> ingredients, string price)
+        {
+            Name = nameOfMeal;
+            Descripition = description;
+            Ingredients = ingredients;
+            Price = price; 
+            
+        }
 
     }
  
