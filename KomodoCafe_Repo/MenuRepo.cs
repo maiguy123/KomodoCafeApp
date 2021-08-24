@@ -19,7 +19,7 @@ namespace GoldBadgeChallenge
         }
 
         /// Read
-        public List<Menu> GetMenuList()
+        public List<Menu> GetMenuByList()
         {
             return _menuDirectory;
         }
@@ -74,7 +74,7 @@ namespace GoldBadgeChallenge
 
 
         // Helper Method 
-        private Menu GetMenu(string menu)
+        public Menu GetMenu(string menu)
         {
             foreach (Menu content in _menuDirectory)
             {
