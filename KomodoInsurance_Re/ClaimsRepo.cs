@@ -44,12 +44,9 @@ namespace KomodoInsurance_Re
             }
         }
         // Delete
-        public bool DequeueFromList(string name) 
+        public Claims DequeueFromList() 
         {
-            int claimLength = _claimsDirectory.Count();
-            _claimsDirectory.Dequeue();
-            bool isRemoved = claimLength - 1 == _claimsDirectory.Count();
-            return isRemoved;
+            return _claimsDirectory.Dequeue();   
         }
         // Helper Method
         public Claims GetClaims(string claims)
