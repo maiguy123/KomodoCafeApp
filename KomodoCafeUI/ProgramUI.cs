@@ -13,7 +13,7 @@ namespace KomodoCafeUI
         // Method that run/starts the application
         public void Run()
         {
-            Seed();
+           
             Menu();
         }
 
@@ -89,8 +89,8 @@ namespace KomodoCafeUI
 
 
             Console.WriteLine("Anymore ingreidensts yes or no");
-            string userInput = Console.ReadLine();
-
+            string userInput = Console.ReadLine().ToLower().Trim();
+            
             while (userInput == "yes")
             {
                 Console.WriteLine("What's the next ingredient?");
