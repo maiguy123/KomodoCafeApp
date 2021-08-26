@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace KomodoInsurance_Test
 {
@@ -56,9 +57,11 @@ namespace KomodoInsurance_Test
             //Arrange
             Arrange();
             //Act
-            bool removeItem = _claimsRepo.RemoveClaimsFromQueue();
+            int claims = _claimsRepo.GetClaimsByQueue().Count();
+           _claimsRepo.DequeueFromList();
+            bool isTrue = _claimsRepo.GetClaimsByQueue().Count() == claims - 1;
             //Assert
-            Assert.IsTrue(removeItem);
+            Assert.IsTrue(isTrue);
         }
     }
 }
